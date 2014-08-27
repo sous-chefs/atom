@@ -8,7 +8,9 @@
 case node['platform_family']
 when 'windows'
   include_recipe 'chocolatey'
-  chocolatey 'atom'
+  chocolatey 'atom' do
+    version node['atom']['version']
+  end
 when 'debian', 'ubuntu'
   # Add ppa
   include_recipe 'apt'
@@ -19,5 +21,7 @@ when 'debian', 'ubuntu'
     keyserver      'keyserver.ubuntu.com'
     key            'EEA14886'
   end
-  package 'atom'
+  package 'atom' do
+    version node['atom']['version']
+  end
 end
