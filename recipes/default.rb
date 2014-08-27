@@ -10,6 +10,7 @@ when 'windows'
   include_recipe 'chocolatey'
   chocolatey 'atom' do
     version node['atom']['version']
+    action :upgrade
   end
 when 'debian', 'ubuntu'
   # Add ppa
@@ -23,5 +24,6 @@ when 'debian', 'ubuntu'
   end
   package 'atom' do
     version node['atom']['version']
+    action :upgrade
   end
 end
