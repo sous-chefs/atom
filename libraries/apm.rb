@@ -20,46 +20,46 @@
 #
 
 class Chef
-  class Resource::APM < Resource
-    identity_attr :name
+  class Resource
+    class AtomApm < Chef::Resource
 
-    def initialize(name, run_context = nil)
-      # Set the resource name and provider
-      @resource_name = :apm
-      @provider = Provider::APM
+      def initialize(name, run_context = nil)
+        super
+        # Set the resource name and provider
+        @resource_name = :atom_apm
+        @provider = Chef::Provider::AtomApm
+        # Set default action and allowed actions
+        @action = :install
+        @allowed_actions = [:install]
+        @name = name
+      end
 
-      # Set default action and allowed actions
-      @action = :install
-      @allowed_actions.push
+      def name(arg = nil)
+        set_or_return(:name, arg, kind_of: String)
+      end
     end
-
-    def name(arg = nil)
-      set_or_return(:name, arg, kind_of: String)
-    end
-
   end
 end
 
 
 class Chef
-  class Provider::APM < Provider
-    def load_current_resource
-      Chef::Log::debug("Loading current resource #{new_resource}")
+  class Provider
+    class AtomApm < Chef::Provider
+      def load_current_resource
+        Chef::Log.debug("Loading current resource #{new_resource}")
 
-      @current_resource = Resource::APM.new(new_resource.name)
-      @current_resource.name(new_resource.name)
-      @current_resource.config(new_resource.config)
+        @current_resource = Chef::Resource::AtomApm.new(new_resource.name)
+        @current_resource.name(new_resource.name)
 
-      # if package_exists?
-      #   # TODO: Seach if package exists: Leavign it for now
-      # end
-    end
+        # if package_exists?
+        #   # TODO: Seach if package exists: Leavign it for now
+        # end
+        @current_resource
+      end
 
-    def action_install
-      # TODO Check if package exists?
-      execute "apm install #{@current_resource.name}" do
-        ignore_failure true
-        action :nothing
+      def action_install
+        # TODO Check if package exists?
+        execute "apm install #{@current_resource.name}"
       end
     end
   end

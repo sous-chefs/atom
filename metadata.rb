@@ -1,4 +1,4 @@
-name             'chef-atom'
+name             'atom'
 maintainer       'Mohit Sethi'
 maintainer_email 'mohit@sethis.in'
 license          'Apache 2.0 '

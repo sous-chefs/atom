@@ -26,4 +26,7 @@ when 'debian', 'ubuntu'
     version node['atom']['version']
     action :upgrade
   end
+  atom_apm 'dracula-theme'do
+    action :install
+  end
 end
