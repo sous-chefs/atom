@@ -30,7 +30,7 @@ class Chef
         @provider = Chef::Provider::AtomApm
         # Set default action and allowed actions
         @action = :install
-        @allowed_actions = [:install]
+        @allowed_actions = [:install, :uninstall, :upgrade]
         @name = name
       end
 
@@ -60,6 +60,14 @@ class Chef
       def action_install
         # TODO Check if package exists?
         execute "apm install #{@current_resource.name}"
+      end
+
+      def action_upgrade
+        execute "apm upgrade #{@current_resource.name}"
+      end
+
+      def action_uninstall
+        execute "apm uninstall #{@current_resource.name}"
       end
     end
   end
