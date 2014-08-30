@@ -10,10 +10,13 @@ end
 group :test do
   gem 'chefspec', '~> 4.0'
   gem 'foodcritic', '~> 3.0.3'
-  gem 'rubocop', '~> 0.23'
 end
 
 group :integration do 
-  gem 'kitchen-docker', '~> 0.14'
+  gem 'kitchen-docker', '~> 1.5.0'
   gem 'test-kitchen', '~> 1.2.1'
+end
+
+group :development do
+  gem 'rubocop', '~> 0.25'
 end
