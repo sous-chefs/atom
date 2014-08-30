@@ -1,9 +1,9 @@
 # A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 gem 'rake'
 
-group :test, :integration do 
+group :test, :integration do
   gem 'berkshelf', '~> 3.0'
 end
 
@@ -12,7 +12,7 @@ group :test do
   gem 'foodcritic', '~> 3.0.3'
 end
 
-group :integration do 
+group :integration do
   gem 'kitchen-docker', '~> 1.5.0'
   gem 'test-kitchen', '~> 1.2.1'
 end

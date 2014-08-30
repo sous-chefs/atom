@@ -21,8 +21,8 @@
 
 class Chef
   class Resource
+    # Resource class for resource `atom_apm`
     class AtomApm < Chef::Resource
-
       def initialize(name, run_context = nil)
         super
         # Set the resource name and provider
@@ -41,9 +41,9 @@ class Chef
   end
 end
 
-
 class Chef
   class Provider
+    # Provider class for resource `atom_apm`
     class AtomApm < Chef::Provider
       def load_current_resource
         Chef::Log.debug("Loading current resource #{new_resource}")
@@ -58,7 +58,6 @@ class Chef
       end
 
       def action_install
-        # TODO Check if package exists?
         execute "apm install #{@current_resource.name}"
       end
 
