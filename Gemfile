@@ -9,7 +9,7 @@ end
 
 group :test do
   gem 'chefspec', '~> 4.0'
-  gem 'foodcritic', '~> 3.0.3'
+  gem 'foodcritic', '~> 4.0.0'
 end
 
 group :integration do
