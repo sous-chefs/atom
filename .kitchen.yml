@@ -10,7 +10,7 @@ platforms:
     driver_config:
         image: ubuntu:latest
         platform: ubuntu
-  - name: centos-6
+  - name: centos
     driver_config:
         image: centos:latest
         platform: centos
