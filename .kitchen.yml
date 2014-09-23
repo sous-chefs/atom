@@ -1,13 +1,19 @@
 ---
 driver:
-  name: vagrant
+  name: docker
 
 provisioner:
   name: chef_zero
 
 platforms:
-  - name: ubuntu-12.04
-  - name: centos-6.4
+  - name: ubuntu
+    driver_config:
+        image: ubuntu:latest
+        platform: ubuntu
+  - name: centos-6
+    driver_config:
+        image: centos:latest
+        platform: centos
 
 suites:
   - name: default
