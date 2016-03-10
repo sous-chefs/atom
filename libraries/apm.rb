@@ -58,15 +58,15 @@ class Chef
       end
 
       def action_install
-        execute "apm install #{@current_resource.name}"
+        shell_out "apm install #{@current_resource.name}"
       end
 
       def action_upgrade
-        execute "apm upgrade #{@current_resource.name}"
+        shell_out "apm upgrade #{@current_resource.name}"
       end
 
       def action_uninstall
-        execute "apm uninstall #{@current_resource.name}"
+        shell_out "apm uninstall #{@current_resource.name}"
       end
     end
   end
