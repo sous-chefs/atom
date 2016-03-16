@@ -51,8 +51,11 @@ spec/*
 spec/fixtures/*
 test/*
 features/*
+examples/*
 Guardfile
 Procfile
+.kitchen*
+.rubocop.yml
 
 # SCM #
 #######
@@ -76,15 +79,9 @@ tmp
 
 # Cookbooks #
 #############
-CONTRIBUTING
+CONTRIBUTING*
 CHANGELOG*
-
-# Strainer #
-############
-Colanderfile
-Strainerfile
-.colander
-.strainer
+TESTING*
 
 # Vagrant #
 ###########

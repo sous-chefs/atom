@@ -15,4 +15,4 @@
 # limitations under the License.
 #
 
-default['atom']['version'] = '0.124.0'
+default['atom']['version'] = '1.5.4'
