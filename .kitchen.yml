@@ -1,22 +1,22 @@
 ---
 driver:
-  name: docker
+  name: vagrant
 
 provisioner:
   name: chef_zero
 
 platforms:
-  - name: ubuntu
+  - name: ubuntu-14.04
+  - name: centos-7.2
+  - name: windows-2012r2
     driver_config:
-        image: ubuntu:latest
-        platform: ubuntu
-  - name: centos
-    driver_config:
-        image: centos:latest
-        platform: centos
+      box:  mwrock/windows2012r2
+
 
 suites:
   - name: default
     run_list:
-      - recipe[chef-atom::default]
-    attributes:
+      - recipe[atom]
+
+verifier:
+  name: inspec

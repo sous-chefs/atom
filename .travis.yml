@@ -1,0 +1,24 @@
+sudo: false
+addons:
+  apt:
+    sources:
+      - chef-current-precise
+    packages:
+      - chefdk
+
+# Don't `bundle install`
+install: echo 'skipping bundle install'
+
+# Ensure we make ChefDK's Ruby the default
+before_script:
+  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
+script:
+  - /opt/chefdk/embedded/bin/chef --version
+  - /opt/chefdk/embedded/bin/rubocop --version
+  - /opt/chefdk/embedded/bin/foodcritic --version
+  # print out ChefSpec version
+  - /opt/chefdk/embedded/bin/chef gem list chefspec
+  # run rake in the context of ChefDK
+  - chef exec rake
+matrix:
+  fast_finish: true
