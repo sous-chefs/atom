@@ -15,4 +15,14 @@
 # limitations under the License.
 #
 
-default['atom']['version'] = '1.5.4'
+# version-specific URLs
+# https://github.com/atom/atom/releases/download/v1.5.4/AtomSetup.exe
+# https://github.com/atom/atom/releases/download/v1.5.4/atom-amd64.deb
+
+# latest release URLs
+default['atom']['source_url'] = value_for_platform_family(
+  'mac_os_x' => 'https://atom.io/download/mac',
+  'windows'  => 'https://atom.io/download/windows',
+  'debian'   => 'https://atom.io/download/deb',
+  'rhel'     => 'https://atom.io/download/rpm'
+)

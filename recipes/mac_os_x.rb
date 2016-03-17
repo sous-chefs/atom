@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-atom
-# Recipe:: default
+# Recipe:: mac_os_x
 #
 # Copyright (c) 2016 Doug Ireton
 #
@@ -16,4 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "#{cookbook_name}::#{node['platform_family']}"
+include_recipe 'homebrew'
+include_recipe 'homebrew::cask'
+
+homebrew_cask 'atom'

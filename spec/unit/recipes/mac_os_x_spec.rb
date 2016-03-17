@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-atom
-# Recipe:: default
+# mac_os_x_spec.rb
 #
 # Copyright (c) 2016 Doug Ireton
 #
@@ -16,4 +16,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "#{cookbook_name}::#{node['platform_family']}"
+require 'spec_helper'
+
+RSpec.describe 'atom::mac_os_x' do
+  include_context 'mac_os_x-10.10'
+
+  it 'includes the homebrew and homebrew::cask recipes' do
+    expect(chef_run).to include_recipe('homebrew')
+    expect(chef_run).to include_recipe('homebrew::cask')
+  end
+
+  it 'installs Atom via homebrew' do
+    expect(chef_run).to install_homebrew_cask('atom')
+  end
+end

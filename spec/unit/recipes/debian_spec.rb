@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-atom
-# Recipe:: default
+# debian_spec.rb
 #
 # Copyright (c) 2016 Doug Ireton
 #
@@ -16,4 +16,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "#{cookbook_name}::#{node['platform_family']}"
+RSpec.describe 'atom::debian' do
+  include_context 'ubuntu-14.04'
+
+  it 'includes the apt recipe' do
+    expect(chef_run).to include_recipe('apt')
+  end
+
+  it 'sets up the atom-ppa package repository' do
+    expect(chef_run).to add_apt_repository('atom-ppa').with(
+      uri: 'http://ppa.launchpad.net/webupd8team/atom/ubuntu'
+    )
+  end
+
+  it 'installs the atom package' do
+    expect(chef_run).to install_package('atom')
+  end
+end
