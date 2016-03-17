@@ -1,6 +1,8 @@
 chef-atom
 =========
 
+[![Build Status](https://travis-ci.org/mohitsethi/chef-atom.png?branch=master)](https://travis-ci.org/mohitsethi/chef-atom)
+
 Install/Configures `atom.io`
 
 Provides LWRP's `atom_apm` to install, uninstall, upgrade packages.
