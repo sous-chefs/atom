@@ -18,7 +18,6 @@
 require 'rubocop/rake_task'
 require 'foodcritic'
 require 'rspec/core/rake_task'
-require 'stove/rake_task'
 
 RuboCop::RakeTask.new do |rubocop|
   rubocop.options = ['-D']
@@ -27,8 +26,6 @@ end
 FoodCritic::Rake::LintTask.new
 
 RSpec::Core::RakeTask.new
-
-Stove::RakeTask.new
 
 desc 'Run Rubocop and Foodcritic style checks'
 task style: [:rubocop, :foodcritic]
@@ -39,8 +36,14 @@ task test: [:style, :spec]
 task default: :test
 
 begin
+  require 'stove/rake_task'
+  Stove::RakeTask.new
+rescue LoadError
+  puts '>>>>> Stove gem not installed' unless ENV['CI']
+end
+
+# don't require kitchen rake tasks in Travis-CI
+unless ENV['CI']
   require 'kitchen/rake_tasks'
   Kitchen::RakeTasks.new
-rescue LoadError
-  puts '>>>>> Kitchen gem not loaded, omitting tasks' unless ENV['CI']
 end
