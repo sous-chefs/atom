@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-atom
-# Recipe:: default
+# Recipe:: debian
 #
 # Copyright (c) 2016 Doug Ireton
 #
@@ -16,4 +16,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "#{cookbook_name}::#{node['platform_family']}"
+include_recipe 'apt'
+
+apt_repository 'atom-ppa' do
+  uri 'http://ppa.launchpad.net/webupd8team/atom/ubuntu'
+  distribution node['lsb']['codename']
+  components ['main']
+  keyserver 'keyserver.ubuntu.com'
+  key 'EEA14886'
+end
+
+package 'atom'

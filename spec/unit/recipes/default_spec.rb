@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-atom
-# Recipe:: default
+# default_spec.rb
 #
 # Copyright (c) 2016 Doug Ireton
 #
@@ -16,4 +16,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "#{cookbook_name}::#{node['platform_family']}"
+RSpec.describe 'atom::default' do
+  context 'on Ubuntu' do
+    include_context 'ubuntu-14.04'
+
+    it 'includes the debian recipe' do
+      expect(chef_run).to include_recipe('atom::debian')
+    end
+  end
+
+  context 'on Mac OS X' do
+    include_context 'mac_os_x-10.10'
+
+    it 'includes the mac_os_x recipe' do
+      expect(chef_run).to include_recipe('atom::mac_os_x')
+    end
+  end
+
+  context 'on Windows' do
+    include_context 'windows-2012r2'
+
+    it 'includes the windows recipe' do
+      expect(chef_run).to include_recipe('atom::windows')
+    end
+  end
+end

@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-atom
-# Recipe:: default
+# Recipe:: windows
 #
 # Copyright (c) 2016 Doug Ireton
 #
@@ -16,4 +16,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "#{cookbook_name}::#{node['platform_family']}"
+package 'Atom' do # ~FC009
+  source node['atom']['source_url']
+  remote_file_attributes(
+    path: File.join(Chef::Config[:file_cache_path], 'AtomSetup.exe')
+  )
+  installer_type :custom
+  options '/silent'
+end
