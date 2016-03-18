@@ -1,7 +1,7 @@
 chef-atom
 =========
 
-[![Build Status](https://travis-ci.org/mohitsethi/chef-atom.svg?branch=master?branch=master)](https://travis-ci.org/mohitsethi/chef-atom)
+[![Build Status](https://travis-ci.org/mohitsethi/chef-atom.svg?branch=master)](https://travis-ci.org/mohitsethi/chef-atom)
 
 Install/Configures `atom.io`
 
