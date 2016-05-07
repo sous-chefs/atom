@@ -9,6 +9,7 @@ version '0.2.0'
 recipe 'atom::default', 'Installs/Configures Atom'
 
 supports 'mac_os_x'
+supports 'mac_os_x_server'
 supports 'windows'
 supports 'ubuntu'
 supports 'debian'
