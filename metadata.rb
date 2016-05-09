@@ -13,8 +13,8 @@ supports 'windows'
 supports 'ubuntu'
 supports 'debian'
 
-depends 'apt'
-depends 'homebrew'
+depends 'apt', '3.0.0'
+depends 'homebrew', '2.1.0'
 
 source_url 'https://github.com/mohitsethi/chef-atom'
 issues_url 'https://github.com/mohitsethi/chef-atom/issues'
