@@ -12,6 +12,17 @@ Recipes
 ### default
 Installs atom via package manager.
 
+### atom::packages
+Installs the apm packages listed under `node.attributes`.
+
+```
+attributes:
+  atom:
+    packages:
+      - vim-mode
+      - minimap
+```
+
 LWRP Usage
 ---------
 
@@ -19,6 +30,7 @@ LWRP Usage
 This resource manages apm packages, supporting the following actions:
 
     :install(default), :uninstall, :upgrade
+
 #### Examples,
   ```ruby
   # Install 'lychee-theme'

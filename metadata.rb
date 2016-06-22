@@ -7,6 +7,7 @@ long_description 'Installs/Configures the Atom text editor - a hackable editor b
 version '0.2.0'
 
 recipe 'atom::default', 'Installs/Configures Atom'
+recipe 'atom::packages', "Installs Atom packages specified under node['atom']['packages']"
 
 supports 'mac_os_x'
 supports 'windows'
