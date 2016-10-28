@@ -37,6 +37,11 @@ class Chef
       def name(arg = nil)
         set_or_return(:name, arg, kind_of: String)
       end
+
+      def installed?
+        packages = shell_out('apm list --installed --bare').stdout.split("\n")
+        packages.any? { |x| x.index("#{@name}@") == 0 }
+      end
     end
   end
 end
@@ -51,14 +56,11 @@ class Chef
         @current_resource = Chef::Resource::AtomApm.new(new_resource.name)
         @current_resource.name(new_resource.name)
 
-        # if package_exists?
-        #   # TODO: Seach if package exists: Leavign it for now
-        # end
         @current_resource
       end
 
       def action_install
-        shell_out "apm install #{@current_resource.name}"
+        shell_out "apm install #{@current_resource.name}" unless @current_resource.installed?
       end
 
       def action_upgrade
@@ -66,7 +68,7 @@ class Chef
       end
 
       def action_uninstall
-        shell_out "apm uninstall #{@current_resource.name}"
+        shell_out "apm uninstall #{@current_resource.name}" if @current_resource.installed?
       end
     end
   end
