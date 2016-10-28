@@ -30,7 +30,7 @@ class Chef
         @provider = Chef::Provider::AtomApm
         # Set default action and allowed actions
         @action = :install
-        @allowed_actions = [:install, :uninstall, :upgrade]
+        @allowed_actions = [:install, :uninstall, :upgrade, :enable, :disable]
         @name = name
       end
 
@@ -69,6 +69,14 @@ class Chef
 
       def action_uninstall
         shell_out "apm uninstall #{@current_resource.name}" if @current_resource.installed?
+      end
+
+      def action_enable
+        shell_out "apm enable #{@current_resource.name}" if @current_resource.installed?
+      end
+
+      def action_disable
+        shell_out "apm disable #{@current_resource.name}" if @current_resource.installed?
       end
     end
   end
