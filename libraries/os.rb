@@ -19,6 +19,7 @@
 # limitations under the License.
 #
 
+# Methods to determin the OS type
 module OS
   def self.windows?
     (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil

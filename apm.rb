@@ -30,7 +30,7 @@ class Chef
         @provider = Chef::Provider::AtomApm
         # Set default action and allowed actions
         @action = :install
-        @allowed_actions = [:install, :uninstall, :upgrade]
+        @allowed_actions = %i[install uninstall upgrade]
         @name = name
       end
 

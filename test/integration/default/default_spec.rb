@@ -6,8 +6,8 @@ when 'windows'
   end
 
   describe command('/users/vagrant/appdata/local/atom/bin/apm.cmd list') do
-    its(:stdout) { should match /linter@/ }
-    its(:stdout) { should_not match /linter-rubocop@/ }
+    its(:stdout) { should match(/linter@/) }
+    its(:stdout) { should_not match(/linter-rubocop@/) }
   end
 when 'debian'
   describe apt('http://ppa.launchpad.net/webupd8team/atom/ubuntu') do
@@ -20,7 +20,7 @@ when 'debian'
   end
 
   describe command('apm list --installed') do
-    its(:stdout) { should match /^linter@/ }
-    its(:stdout) { should_not match /^linter-rubocop@/ }
+    its(:stdout) { should match(/^linter@/) }
+    its(:stdout) { should_not match(/^linter-rubocop@/) }
   end
 end

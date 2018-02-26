@@ -4,3 +4,6 @@ AllCops:
 
 LineLength:
   Enabled: false
+
+Style/MixinUsage:
+  Enabled: false

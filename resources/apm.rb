@@ -28,31 +28,41 @@ action_class do
 end
 
 action :disable do
-  converge_by("Disable atom plugin #{new_resource.plugin}") do
-    shell_out!("#{apm} disable #{new_resource.plugin}")
-  end if enabled?(new_resource.plugin)
+  if enabled?(new_resource.plugin)
+    converge_by("Disable atom plugin #{new_resource.plugin}") do
+      shell_out!("#{apm} disable #{new_resource.plugin}")
+    end
+  end
 end
 
 action :enable do
-  converge_by("Enable atom plugin #{new_resource.plugin}") do
-    shell_out!("#{apm} enable #{new_resource.plugin}")
-  end if disabled?(new_resource.plugin)
+  if disabled?(new_resource.plugin)
+    converge_by("Enable atom plugin #{new_resource.plugin}") do
+      shell_out!("#{apm} enable #{new_resource.plugin}")
+    end
+  end
 end
 
 action :install do
-  converge_by("Install atom plugin #{new_resource.plugin}") do
-    shell_out!("#{apm} install #{new_resource.plugin}")
-  end unless installed?(new_resource.plugin)
+  unless installed?(new_resource.plugin)
+    converge_by("Install atom plugin #{new_resource.plugin}") do
+      shell_out!("#{apm} install #{new_resource.plugin}")
+    end
+  end
 end
 
 action :upgrade do
-  converge_by("Upgrade atom plugin #{new_resource.plugin}") do
-    shell_out!("#{apm} upgrade #{@new_resource.plugin}")
-  end unless upgrade_available?(new_resource.plugin)
+  unless upgrade_available?(new_resource.plugin)
+    converge_by("Upgrade atom plugin #{new_resource.plugin}") do
+      shell_out!("#{apm} upgrade #{@new_resource.plugin}")
+    end
+  end
 end
 
 action :uninstall do
-  converge_by("Uninstall atom plugin #{new_resource.plugin}") do
-    shell_out!("#{apm} uninstall #{@new_resource.plugin}")
-  end if installed?(new_resource.plugin)
+  if installed?(new_resource.plugin)
+    converge_by("Uninstall atom plugin #{new_resource.plugin}") do
+      shell_out!("#{apm} uninstall #{@new_resource.plugin}")
+    end
+  end
 end

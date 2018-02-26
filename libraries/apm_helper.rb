@@ -19,12 +19,13 @@
 # limitations under the License.
 #
 
-require 'chef/mixin/shell_out'
-include Chef::Mixin::ShellOut
-require_relative 'os'
-include OS
-
+# atom package management helpers
 module AtomApmHelper
+  require 'chef/mixin/shell_out'
+  require_relative 'os'
+  include Chef::Mixin::ShellOut
+  include OS
+
   def disabled?(package)
     disabled = shell_out("#{apm} list").stdout
     disabled =~ /^.*\s#{package}@.*disabled/ ? true : false

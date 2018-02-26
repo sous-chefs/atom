@@ -28,10 +28,10 @@ FoodCritic::Rake::LintTask.new
 RSpec::Core::RakeTask.new
 
 desc 'Run Rubocop and Foodcritic style checks'
-task style: [:rubocop, :foodcritic]
+task style: %i[rubocop foodcritic]
 
 desc 'Run all style checks and unit tests'
-task test: [:style, :spec]
+task test: %i[style spec]
 
 task default: :test
 
