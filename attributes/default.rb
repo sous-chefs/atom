@@ -22,8 +22,8 @@
 # latest release URLs
 default['atom']['source_url'] = value_for_platform_family(
   'mac_os_x' => 'https://atom.io/download/mac',
-  'windows'  => 'https://atom.io/download/windows',
-  'debian'   => 'https://atom.io/download/deb',
-  'rhel'     => 'https://atom.io/download/rpm'
+  'windows' => 'https://atom.io/download/windows',
+  'debian' => 'https://atom.io/download/deb',
+  'rhel' => 'https://atom.io/download/rpm'
 )
 default['atom']['packages'] = []

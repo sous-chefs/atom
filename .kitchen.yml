@@ -1,5 +1,7 @@
 driver:
   name: vagrant
+  synced_folders:
+   - ["~", "/dir", "create: false"]
 
 provisioner:
   name: chef_zero
@@ -20,15 +22,7 @@ suites:
   - name: default
     run_list:
       - recipe[atom]
-  - name: apm
-    run_list:
-      - recipe[atom::packages]
-    attributes:
-      atom:
-        packages:
-          - vim-mode
-    # having issues getting apm to run via test-kitchen on Windows
-    excludes: windows-2012r2
+      - recipe[apm_packages]
 
 verifier:
   name: inspec
