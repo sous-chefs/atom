@@ -1,8 +1,10 @@
 #
-# Cookbook Name:: chef-atom
-# windows_spec.rb
+# Cookbook Name:: atom
+# Library:: os
 #
-# Copyright (c) 2016 Doug Ireton
+# Author:: Mark Gibbons
+#
+# Copyright 2018, Mohit Sethi.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,18 +17,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-RSpec.describe 'atom::windows' do
-  include_context 'windows-2012r2'
+module OS
+  def self.windows?
+    (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
+  end
 
-  it 'downloads and installs the latest version of the Atom package' do
-    expect(chef_run).to install_package('Atom').with(
-      source: 'https://atom.io/download/windows',
-      remote_file_attributes: {
-        path: 'c:/chef/cache/AtomSetup.exe',
-      },
-      installer_type: :custom,
-      options: '/silent'
-    )
+  def self.mac?
+    (/darwin/ =~ RUBY_PLATFORM) != nil
+  end
+
+  def self.unix?
+    !OS.windows?
+  end
+
+  def self.linux?
+    OS.unix? && !OS.mac?
   end
 end

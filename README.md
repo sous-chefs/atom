@@ -5,15 +5,15 @@ chef-atom
 
 Install/Configures Atom `atom.io`
 
-Provides LWRP's `atom_apm` to install, uninstall, upgrade packages.
+Provides resource `atom_apm` to install, uninstall, upgrade packages.
 
 Recipes
 ---------
 ### default
 Installs atom via package manager.
 
-LWRP Usage
----------
+Custom Resource Usage
+---------------------
 
 ### atom_apm
 This resource manages apm packages, supporting the following actions:
