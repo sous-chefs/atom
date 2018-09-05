@@ -7,16 +7,29 @@ provisioner:
 
 platforms:
   - name: ubuntu-14.04
-  - name: centos-7.2
+    driver:
+      gui: false
+      provision: true
+      vagrantfiles:
+        - test/provision/vagrant_debian.rb
   - name: windows-2012r2
-    driver_config:
-      box:  mwrock/windows2012r2
-
+    driver:
+      gui: false
+      box:  mwrock/Windows2012R2
 
 suites:
   - name: default
     run_list:
       - recipe[atom]
+  - name: apm
+    run_list:
+      - recipe[atom::packages]
+    attributes:
+      atom:
+        packages:
+          - vim-mode
+    # having issues getting apm to run via test-kitchen on Windows
+    excludes: windows-2012r2
 
 verifier:
   name: inspec

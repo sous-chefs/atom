@@ -1,16 +1,12 @@
-case os[:family]
-when 'windows'
-  describe command('atom -v') do
-    its(:exit_status) { should eq 0 }
-    its(:stderr) { should eq '' }
+def gui_command(cmd)
+  case os[:family]
+  when 'ubuntu'
+    cmd = "xvfb-run #{cmd}"
   end
-when 'ubuntu'
-  describe apt('http://ppa.launchpad.net/webupd8team/atom/ubuntu') do
-    it { should exist }
-    it { should be_enabled }
-  end
+  command(cmd)
+end
 
-  describe package('atom') do
-    it { should be_installed }
-  end
+describe gui_command('atom -v') do
+  its(:exit_status) { should eq 0 }
+  its(:stderr) { should be_empty }
 end

@@ -26,3 +26,4 @@ default['atom']['source_url'] = value_for_platform_family(
   'debian'   => 'https://atom.io/download/deb',
   'rhel'     => 'https://atom.io/download/rpm'
 )
+default['atom']['packages'] = []
