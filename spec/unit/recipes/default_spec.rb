@@ -26,7 +26,7 @@ RSpec.describe 'atom::default' do
   end
 
   context 'on Mac OS X' do
-    include_context 'mac_os_x-10.10'
+    include_context 'mac_os_x-10.13'
 
     it 'includes the mac_os_x recipe' do
       expect(chef_run).to include_recipe('atom::mac_os_x')
@@ -34,7 +34,7 @@ RSpec.describe 'atom::default' do
   end
 
   context 'on Windows' do
-    include_context 'windows-2012r2'
+    include_context 'windows-2016'
 
     it 'includes the windows recipe' do
       expect(chef_run).to include_recipe('atom::windows')
