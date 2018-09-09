@@ -18,7 +18,7 @@
 
 RSpec.describe 'atom::default' do
   context 'on Ubuntu' do
-    include_context 'ubuntu-14.04'
+    include_context 'ubuntu-18.04'
 
     it 'includes the debian recipe' do
       expect(chef_run).to include_recipe('atom::debian')

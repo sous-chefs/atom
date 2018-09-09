@@ -17,7 +17,7 @@
 # limitations under the License.
 
 RSpec.describe 'atom::debian' do
-  include_context 'ubuntu-14.04'
+  include_context 'ubuntu-18.04'
 
   it 'includes the apt recipe' do
     expect(chef_run).to include_recipe('apt')
