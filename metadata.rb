@@ -14,6 +14,7 @@ supports 'windows'
 supports 'ubuntu'
 supports 'debian'
 
+chef_version '>= 13.0'
 depends 'apt', '>= 3.0'
 depends 'homebrew', '>= 2.1'
 
