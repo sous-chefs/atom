@@ -25,7 +25,7 @@ RSpec.describe 'atom::packages' do
       version: '18.04',
       file_cache_path: '/var/chef/cache'
     ) do |node|
-      node.set['atom']['packages'] = %w(markdown-preview vim-mode)
+      node.override['atom']['packages'] = %w(markdown-preview vim-mode)
     end.converge(described_recipe)
   end
 
