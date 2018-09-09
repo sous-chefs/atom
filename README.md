@@ -1,11 +1,11 @@
 chef-atom
 =========
 
-[![Build Status](https://travis-ci.org/mohitsethi/chef-atom.svg?branch=master)](https://travis-ci.org/mohitsethi/chef-atom)
+[![Build Status](https://travis-ci.org/sous-chefs/atom.svg?branch=master)](https://travis-ci.org/sous-chefs/atom)
 
 Install/Configures Atom `atom.io`
 
-Provides LWRP's `atom_apm` to install, uninstall, upgrade packages.
+Provides the `atom_apm` resource to install, uninstall, upgrade packages.
 
 Recipes
 ---------
@@ -23,7 +23,7 @@ attributes:
       - minimap
 ```
 
-LWRP Usage
+Resource Usage
 ---------
 
 ### atom_apm
@@ -41,15 +41,6 @@ This resource manages apm packages, supporting the following actions:
     action :uninstall
   end
   ```
-
-Contributing
-------------
-1. Fork the repository on Github
-2. Create a named feature branch (like `feature/component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
 
 License and Authors
 -------------------
