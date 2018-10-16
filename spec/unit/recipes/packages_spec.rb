@@ -22,10 +22,10 @@ RSpec.describe 'atom::packages' do
   let(:chef_run) do
     ChefSpec::SoloRunner.new(
       platform: 'ubuntu',
-      version: '14.04',
+      version: '18.04',
       file_cache_path: '/var/chef/cache'
     ) do |node|
-      node.set['atom']['packages'] = %w(markdown-preview vim-mode)
+      node.override['atom']['packages'] = %w(markdown-preview vim-mode)
     end.converge(described_recipe)
   end
 

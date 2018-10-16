@@ -19,7 +19,7 @@
 require 'spec_helper'
 
 RSpec.describe 'atom::mac_os_x' do
-  include_context 'mac_os_x-10.10'
+  include_context 'mac_os_x-10.13'
 
   it 'includes the homebrew and homebrew::cask recipes' do
     expect(chef_run).to include_recipe('homebrew')

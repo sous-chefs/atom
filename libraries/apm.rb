@@ -23,20 +23,10 @@ class Chef
   class Resource
     # Resource class for resource `atom_apm`
     class AtomApm < Chef::Resource
-      def initialize(name, run_context = nil)
-        super
-        # Set the resource name and provider
-        @resource_name = :atom_apm
-        @provider = Chef::Provider::AtomApm
-        # Set default action and allowed actions
-        @action = :install
-        @allowed_actions = [:install, :uninstall, :upgrade, :enable, :disable]
-        @name = name
-      end
+      resource_name :atom_apm
 
-      def name(arg = nil)
-        set_or_return(:name, arg, kind_of: String)
-      end
+      default_action :install
+      allowed_actions :install, :uninstall, :upgrade, :enable, :disable
 
       def installed?
         packages = shell_out('apm list --installed --bare').stdout.split("\n")
@@ -50,6 +40,8 @@ class Chef
   class Provider
     # Provider class for resource `atom_apm`
     class AtomApm < Chef::Provider
+      provides :atom_apm
+
       def load_current_resource
         Chef::Log.debug("Loading current resource #{new_resource}")
 

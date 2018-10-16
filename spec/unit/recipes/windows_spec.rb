@@ -17,13 +17,13 @@
 # limitations under the License.
 
 RSpec.describe 'atom::windows' do
-  include_context 'windows-2012r2'
+  include_context 'windows-2016'
 
   it 'downloads and installs the latest version of the Atom package' do
     expect(chef_run).to install_package('Atom').with(
       source: 'https://atom.io/download/windows',
       remote_file_attributes: {
-        path: 'c:/chef/cache/AtomSetup.exe'
+        path: 'c:/chef/cache/AtomSetup.exe',
       },
       installer_type: :custom,
       options: '/silent'
