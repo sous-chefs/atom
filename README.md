@@ -1,7 +1,8 @@
 chef-atom
 =========
 
-[![Build Status](https://travis-ci.org/sous-chefs/atom.svg?branch=master)](https://travis-ci.org/sous-chefs/atom)
+[![Cookbook Version](https://img.shields.io/cookbook/v/atom.svg)](https://supermarket.chef.io/cookbooks/atom)
+[![Build Status](https://img.shields.io/circleci/project/github/sous-chefs/atom/master.svg)](https://circleci.com/gh/sous-chefs/atom)
 
 Install/Configures Atom `atom.io`
 
