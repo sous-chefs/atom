@@ -48,7 +48,6 @@ atom_apm 'dracula-theme' do
 end
 ```
 
-
 ## Contributors
 
 This project exists thanks to all the people who [contribute.](https://opencollective.com/sous-chefs/contributors.svg?width=890&button=false)
