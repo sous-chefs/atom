@@ -16,14 +16,9 @@
 #
 
 property :plugin, String, name_property: true
-resource_name :atom_apm
 default_action :install
 
 action_class do
-  def whyrun_supportd?
-    true
-  end
-
   include AtomApmHelper
 end
 

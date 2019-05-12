@@ -1,7 +1,5 @@
 driver:
   name: vagrant
-  synced_folders:
-   - ["~", "/dir", "create: false"]
 
 provisioner:
   name: chef_zero

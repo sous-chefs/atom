@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: atom
-# Library:: apm
+# Library:: apm_helper
 #
 # Author:: Mohit Sethi <mohit@sethis.in>
 #
@@ -21,10 +21,6 @@
 
 # atom package management helpers
 module AtomApmHelper
-  require 'chef/mixin/shell_out'
-  require_relative 'os'
-  include Chef::Mixin::ShellOut
-  include OS
 
   def disabled?(package)
     disabled = shell_out("#{apm} list").stdout
@@ -51,6 +47,7 @@ module AtomApmHelper
   end
 
   def apm
-    OS.windows? ? '%localappdata%/atom/bin/apm' : 'apm'
+    # TODO: Use the ohai data
+    node.platform_family?('windows') ? '%localappdata%/atom/bin/apm' : 'apm'
   end
 end
