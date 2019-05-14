@@ -10,12 +10,18 @@ Install/Configures Atom `atom.io`
 
 Provides the `atom_apm` resource to install, uninstall, upgrade packages.
 
+## Maintainers
+
+This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of Chef cookbook maintainers working together to maintain important cookbooks. If you’d like to know more please visit [sous-chefs.org](https://sous-chefs.org/) or come chat with us on the Chef Community Slack in [#sous-chefs](https://chefcommunity.slack.com/messages/C2V7B88SF).
+
 ## Recipes
 
 ### default
+
 Installs atom via package manager.
 
 ### atom::packages
+
 Installs the apm packages listed under `node.attributes`.
 
 ```yaml
