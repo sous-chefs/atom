@@ -1,6 +1,8 @@
 require 'rspec_helper'
 require 'rspec'
 require 'ostruct'
+require 'chef/mixin/shell_out'
+include Chef::Mixin::ShellOut
 include AtomApmHelper
 
 RSpec.describe 'package is installed' do
@@ -55,6 +57,8 @@ end
 
 def mock_apm_list(output)
   allow(self).to receive(:shell_out).with('apm list').and_return(output)
+  node = FakeNode.new
+  allow(self).to receive(:node).and_return(node)
 end
 
 def mock_apm_upgrade(output)
@@ -93,4 +97,10 @@ def not_installed_out
    ├── intentions@1.1.5
    ├── linter-ui-default@1.6.10'
   )
+end
+
+class FakeNode
+  def platform_family?(_type)
+    false
+  end
 end

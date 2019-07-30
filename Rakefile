@@ -1,7 +1,7 @@
-# Cookbook Name:: Atom
+# Cookbook:: Atom
 # Rakefile
 
-# Copyright 2016 Doug Ireton
+# Copyright:: 2016 Doug Ireton
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

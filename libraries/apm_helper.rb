@@ -1,10 +1,10 @@
 #
-# Cookbook Name:: atom
+# Cookbook:: atom
 # Library:: apm_helper
 #
 # Author:: Mohit Sethi <mohit@sethis.in>
 #
-# Copyright 2013-2014, Mohit Sethi.
+# Copyright:: 2013-2014, Mohit Sethi.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@
 
 # atom package management helpers
 module AtomApmHelper
-
   def disabled?(package)
     disabled = shell_out("#{apm} list").stdout
     disabled =~ /^.*\s#{package}@.*disabled/ ? true : false
