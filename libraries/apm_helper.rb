@@ -46,6 +46,6 @@ module AtomApmHelper
   end
 
   def apm
-    node.platform_family?('windows') ? '%localappdata%/atom/bin/apm' : 'apm'
+    platform_family?('windows') ? '%localappdata%/atom/bin/apm' : 'apm'
   end
 end
