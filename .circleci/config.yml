@@ -1,4 +1,8 @@
 ---
+lint_and_unit: &lint_and_unit
+  - delivery
+  - danger
+  - lint-yaml
 
 version: 2.1
 
@@ -8,11 +12,16 @@ orbs:
 workflows:
   kitchen:
     jobs:
+      # Lint and Unit Test
+      - kitchen/yamllint:
+          name: lint-yaml
       - kitchen/danger:
           name: danger
           context: Danger
-      - kitchen/lint:
-          name: lint
+      - kitchen/delivery:
+          name: delivery
+
+      # Resource tests
       - kitchen/dokken-single:
           name:  default-ubuntu-1804
           suite: default-ubuntu-1804
