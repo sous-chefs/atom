@@ -25,3 +25,5 @@ workflows:
       - kitchen/dokken-single:
           name: default-ubuntu-1804
           suite: default-ubuntu-1804
+          requires:
+            *lint_and_unit
