@@ -1,3 +1,4 @@
+---
 driver:
   name: vagrant
 
@@ -14,7 +15,7 @@ platforms:
   - name: windows-2012r2
     driver:
       gui: false
-      box:  mwrock/Windows2012R2
+      box: mwrock/Windows2012R2
 
 suites:
   - name: default

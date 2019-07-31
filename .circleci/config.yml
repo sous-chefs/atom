@@ -23,5 +23,5 @@ workflows:
 
       # Resource tests
       - kitchen/dokken-single:
-          name:  default-ubuntu-1804
+          name: default-ubuntu-1804
           suite: default-ubuntu-1804
