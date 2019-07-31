@@ -27,6 +27,11 @@ RSpec.describe 'atom::default' do
 
   context 'on Mac OS X' do
     include_context 'mac_os_x-10.13'
+    before(:each) do
+      stubs_for_resource("execute[set analytics]") do |resource|
+        allow(resource).to receive_shell_out("/usr/local/bin/brew analytics state", {:user=>"xmjg"}).and_return(no_output)
+      end
+    end
 
     it 'includes the mac_os_x recipe' do
       expect(chef_run).to include_recipe('atom::mac_os_x')

@@ -20,6 +20,11 @@ require 'spec_helper'
 
 RSpec.describe 'atom::mac_os_x' do
   include_context 'mac_os_x-10.13'
+  before(:each) do
+    stubs_for_resource("execute[set analytics]") do |resource|
+      allow(resource).to receive_shell_out("/usr/local/bin/brew analytics state", {:user=>"xmjg"}).and_return(no_output)
+    end
+  end
 
   it 'includes the homebrew and homebrew::cask recipes' do
     expect(chef_run).to include_recipe('homebrew')

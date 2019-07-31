@@ -6,3 +6,9 @@ RSpec.configure do |config|
   config.filter_run :focus
   config.order = 'random'
 end
+
+module FakeNode
+  def platform_family?(_type)
+    false
+  end
+end

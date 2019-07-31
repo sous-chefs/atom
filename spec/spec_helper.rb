@@ -85,3 +85,8 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 end
+
+def no_output
+  cmd_out = Struct.new(:stdout, :stderr)
+  cmd_out.new('', '')
+end
