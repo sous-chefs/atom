@@ -40,6 +40,8 @@ Custom Resource Usage
 
 This resource manages apm packages, supporting the following actions:
 
+- disable
+- enable
 - install(default)
 - uninstall
 - upgrade

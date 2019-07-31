@@ -46,7 +46,6 @@ module AtomApmHelper
   end
 
   def apm
-    # TODO: Use the ohai data
     node.platform_family?('windows') ? '%localappdata%/atom/bin/apm' : 'apm'
   end
 end

@@ -46,18 +46,18 @@ action :install do
   end
 end
 
-action :upgrade do
-  unless upgrade_available?(new_resource.plugin)
-    converge_by("Upgrade atom plugin #{new_resource.plugin}") do
-      shell_out!("#{apm} upgrade #{@new_resource.plugin}")
-    end
-  end
-end
-
 action :uninstall do
   if installed?(new_resource.plugin)
     converge_by("Uninstall atom plugin #{new_resource.plugin}") do
       shell_out!("#{apm} uninstall #{@new_resource.plugin}")
+    end
+  end
+end
+
+action :upgrade do
+  unless upgrade_available?(new_resource.plugin)
+    converge_by("Upgrade atom plugin #{new_resource.plugin}") do
+      shell_out!("#{apm} upgrade #{@new_resource.plugin}")
     end
   end
 end

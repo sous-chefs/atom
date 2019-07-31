@@ -1,6 +1,6 @@
 case os[:family]
 when 'windows'
-  describe command('atom -v') do
+  describe command('apm -v') do
     its(:exit_status) { should eq 0 }
     its(:stderr) { should eq '' }
   end
@@ -14,19 +14,20 @@ when 'debian'
     it { should exist }
     it { should be_enabled }
   end
-  command(cmd)
 end
 
-describe gui_command('atom -v') do
+describe command('apm -v') do
   its(:exit_status) { should eq 0 }
   its(:stderr) { should be_empty }
+  its(:stdout) { should match(/atom/) }
+  its(:stdout) { should match(/apm/) }
+end
 
-  describe package('atom') do
-    it { should be_installed }
-  end
+describe package('atom') do
+  it { should be_installed }
+end
 
-  describe command('apm list --installed') do
-    its(:stdout) { should match(/^linter@/) }
-    its(:stdout) { should_not match(/^linter-rubocop@/) }
-  end
+describe command('apm list --installed') do
+  its(:stdout) { should match(/\slinter@/) }
+  its(:stdout) { should_not match(/\slinter-rubocop@/) }
 end

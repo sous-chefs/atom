@@ -15,8 +15,8 @@ supports 'ubuntu'
 supports 'debian'
 
 chef_version '>= 13.0'
-depends 'apt', '~> 6.1'
-depends 'homebrew', '~> 4.3'
+depends 'apt', '>= 6.1'
+depends 'homebrew', '>= 4.3'
 
 source_url 'https://github.com/sous-chefs/atom'
 issues_url 'https://github.com/sous-chefs/atom/issues'

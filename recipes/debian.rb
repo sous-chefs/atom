@@ -21,7 +21,7 @@ apt_repository 'atom-ppa' do
   distribution node['lsb']['codename']
   components ['main']
   keyserver 'keyserver.ubuntu.com'
-  key 'EEA14886'
+  key 'C2518248EEA14886'
 end
 
 package 'atom'
