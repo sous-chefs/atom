@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: chef-atom
+# Cookbook:: chef-atom
 # Recipe:: debian
 #
-# Copyright (c) 2016 Doug Ireton
+# Copyright:: (c) 2016 Doug Ireton
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ apt_repository 'atom-ppa' do
   distribution node['lsb']['codename']
   components ['main']
   keyserver 'keyserver.ubuntu.com'
-  key 'EEA14886'
+  key 'C2518248EEA14886'
 end
 
 package 'atom'

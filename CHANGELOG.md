@@ -1,5 +1,11 @@
 # Changelog for Atom cookbook
 
+## 1.0.0
+* Use a custom resource instead of an LWRP
+* Add tests.
+* Make the cookbook actions idempotent.
+* Remove the chefspec tests
+
 ## 0.2.0
 * Add support for Mac OS X
 * On Debian/Ubuntu install package instead of just setting up Atom apt ppa repo

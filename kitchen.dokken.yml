@@ -1,0 +1,21 @@
+---
+driver:
+  name: dokken
+  privileged: true
+  chef_version: current
+  env: [CHEF_LICENSE=accept]
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-18.04
+    driver:
+      image: dokken/ubuntu-18.04
+      pid_one_command: /bin/systemd
