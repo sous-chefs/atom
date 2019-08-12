@@ -12,10 +12,10 @@ platforms:
       provision: true
       vagrantfiles:
         - test/provision/vagrant_debian.rb
-  - name: windows-2012r2
+  - name: windows-2016
     driver:
       gui: false
-      box: mwrock/Windows2012R2
+      box: tas50/windows_2016
 
 suites:
   - name: default

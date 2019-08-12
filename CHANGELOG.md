@@ -1,6 +1,10 @@
 # Changelog for Atom cookbook
 
-## 1.0.0
+## 0.3.1
+* Add a TESTING.md file
+* Use a new windows test image and test windows 2016
+
+## 0.3.0
 * Use a custom resource instead of an LWRP
 * Add tests.
 * Make the cookbook actions idempotent.
