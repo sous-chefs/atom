@@ -3,11 +3,8 @@ maintainer 'Sous Chefs'
 maintainer_email 'help@sous-chefs.org'
 license 'Apache-2.0'
 description 'Installs/Configures the Atom text editor - a hackable editor based on Electron, maintained by GitHub'
-long_description 'Installs/Configures the Atom text editor - a hackable editor based on Electron, maintained by GitHub'
-version '0.3.1'
 
-recipe 'atom::default', 'Installs/Configures Atom'
-recipe 'atom::packages', "Installs Atom packages specified under node['atom']['packages']"
+version '0.3.1'
 
 supports 'mac_os_x'
 supports 'windows'
