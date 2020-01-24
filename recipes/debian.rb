@@ -18,7 +18,6 @@
 
 apt_repository 'atom-ppa' do
   uri 'http://ppa.launchpad.net/webupd8team/atom/ubuntu'
-  distribution node['lsb']['codename']
   components ['main']
   keyserver 'keyserver.ubuntu.com'
   key 'C2518248EEA14886'

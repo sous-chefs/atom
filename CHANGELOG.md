@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Migrated to Circleci testing
+- Migrated to Github Actions for testing
+- Removed redundant `distribution` property in the `apt_repository` resource
 
 ### Added
 
