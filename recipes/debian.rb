@@ -17,10 +17,7 @@
 # limitations under the License.
 
 apt_repository 'atom-ppa' do
-  uri 'http://ppa.launchpad.net/webupd8team/atom/ubuntu'
-  components ['main']
-  keyserver 'keyserver.ubuntu.com'
-  key 'C2518248EEA14886'
+  uri 'ppa:webupd8team/atom'
 end
 
 package 'atom'

@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Migrated to Github Actions for testing
-- Removed redundant `distribution` property in the `apt_repository` resource
+- Simplified the PPA setup in the `apt_repository` resource
 
 ### Added
 
