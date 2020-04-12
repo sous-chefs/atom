@@ -1,52 +1,51 @@
-*.gem
 *.rbc
-/.config
-/coverage/
-/InstalledFiles
-/pkg/
-/spec/reports/
-/spec/examples.txt
-/test/tmp/
-/test/version_tmp/
-/tmp/
-
-## Specific to RubyMotion:
-.dat*
-.repl_history
-build/
-
-## Documentation cache and generated files:
-/.yardoc/
-/_yardoc/
-/doc/
-/rdoc/
-
-## Environment normalization:
-/.bundle/
-/lib/bundler/man/
-
-# for a library or gem, you might want to ignore these files since the code is
-# intended to run in multiple environments; otherwise, check them in:
-# Gemfile.lock
-# .ruby-version
-# .ruby-gemset
-
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
-
-.vagrant
-Berksfile.lock
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+_Store
 *~
 *#
 .#*
 \#*#
 .*.sw[a-z]
 *.un~
+*.tmp
+*.bk
+*.bkup
 
-# Bundler
+# ruby/bundler files
+.ruby-version
+.ruby-gemset
+.rvmrc
 Gemfile.lock
-bin/*
-.bundle/*
+.bundle
+*.gem
 
-.kitchen/
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
+.idea
+
+# chef stuff
+Berksfile.lock
+.kitchen
 .kitchen.local.yml
+vendor/
+.coverage/
+.zero-knife.rb
+Policyfile.lock.json
+Cheffile.lock
+.librarian/
+
+# vagrant stuff
+.vagrant/
+.vagrant.d/
+.kitchen/
