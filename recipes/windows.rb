@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-package 'Atom' do # ~FC009
+package 'Atom' do
   source node['atom']['source_url']
   remote_file_attributes(
     path: File.join(Chef::Config[:file_cache_path], 'AtomSetup.exe')
