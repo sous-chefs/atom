@@ -2,30 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## Unreleased
-
-- resolved cookstyle error: recipes/windows.rb:19:18 convention: `Layout/TrailingWhitespace`
-- resolved cookstyle error: recipes/windows.rb:19:19 refactor: `ChefModernize/FoodcriticComments`
-
-## [Unreleased]
+## 0.4.0
 
 - Migrated to Github Actions for testing
 - Simplified the PPA setup in the `apt_repository` resource
-
-### Added
-
-### Fixed
-
-### Deprecated
-
-### Removed
+- resolved cookstyle error: recipes/windows.rb:19:18 convention: `Layout/TrailingWhitespace`
+- resolved cookstyle error: recipes/windows.rb:19:19 refactor: `ChefModernize/FoodcriticComments`
 
 ## [0.3.1] - 2019-08-12
-
-### Added
 
 - Add a TESTING.md file
 - Use a new windows test image and test windows 2016
