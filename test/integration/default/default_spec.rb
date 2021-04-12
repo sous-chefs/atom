@@ -10,7 +10,7 @@ when 'windows'
     its(:stdout) { should_not match(/linter-rubocop@/) }
   end
 when 'debian'
-  describe apt('http://ppa.launchpad.net/webupd8team/atom/ubuntu') do
+  describe apt('https://packagecloud.io/AtomEditor/atom/any/') do
     it { should exist }
     it { should be_enabled }
   end

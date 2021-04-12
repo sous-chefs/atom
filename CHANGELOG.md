@@ -4,9 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+- Add ubuntu 20.04 support
+- Add ubuntu 21.04 support
+
 ## 0.4.1 - *2021-05-11*
 
-- Update standaardised files from sous-chefs/repo-management
+- Update standardised files from sous-chefs/repo-management
 
 ## 0.4.0
 

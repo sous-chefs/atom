@@ -17,6 +17,7 @@
 
 property :plugin, String, name_property: true
 default_action :install
+unified_mode true
 
 action_class do
   include AtomApmHelper

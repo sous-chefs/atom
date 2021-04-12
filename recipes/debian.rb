@@ -16,8 +16,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apt_repository 'atom-ppa' do
-  uri 'ppa:webupd8team/atom'
+apt_update
+
+package 'apt-transport-https'
+
+apt_repository 'atom-packagecloud' do
+  arch 'amd64'
+  components %w(any main)
+  distribution ''
+  key 'https://packagecloud.io/AtomEditor/atom/gpgkey'
+  uri 'https://packagecloud.io/AtomEditor/atom/any/'
 end
 
 package 'atom'
