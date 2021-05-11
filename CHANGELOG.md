@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
 ## 0.4.1 - *2021-05-11*
 
 - Update standaardised files from sous-chefs/repo-management
