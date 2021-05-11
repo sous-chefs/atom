@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+- Update standaardised files from sous-chefs/repo-management
+
 ## 0.4.0
 
 - Migrated to Github Actions for testing
