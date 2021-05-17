@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
 ## 0.5.0 - *2021-05-17*
 
 - Add ubuntu 20.04 support
