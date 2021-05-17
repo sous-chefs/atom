@@ -5,16 +5,16 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   delivery:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Run Chef Delivery
-        uses: actionshub/chef-delivery@master
+        uses: actionshub/chef-delivery@main
         env:
           CHEF_LICENSE: accept-no-persist
 
@@ -22,17 +22,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Run yaml Lint
-        uses: actionshub/yamllint@master
+        uses: actionshub/yamllint@main
 
   mdl:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Run Markdown Lint
-        uses: actionshub/markdownlint@master
+        uses: actionshub/markdownlint@main
 
   dokken:
     needs: [mdl, yamllint, delivery]
@@ -41,17 +41,19 @@ jobs:
       matrix:
         os:
           - 'ubuntu-1804'
+          - 'ubuntu-2004'
+          - 'ubuntu-2104'
         suite:
           - 'default'
       fail-fast: false
 
     steps:
       - name: Check out code
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Install Chef
-        uses: actionshub/chef-install@master
+        uses: actionshub/chef-install@main
       - name: Dokken
-        uses: actionshub/kitchen-dokken@master
+        uses: actionshub/kitchen-dokken@main
         env:
           CHEF_LICENSE: accept-no-persist
           KITCHEN_LOCAL_YAML: kitchen.dokken.yml
@@ -64,4 +66,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@master
+        uses: actions/checkout@main

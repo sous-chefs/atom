@@ -12,6 +12,18 @@ platforms:
       provision: true
       vagrantfiles:
         - test/provision/vagrant_debian.rb
+  - name: ubuntu-20.04
+    driver:
+      gui: false
+      provision: true
+      vagrantfiles:
+        - test/provision/vagrant_debian.rb
+  - name: ubuntu-21.04
+    driver:
+      gui: false
+      provision: true
+      vagrantfiles:
+        - test/provision/vagrant_debian.rb
   - name: windows-2016
     driver:
       gui: false
