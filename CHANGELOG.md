@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+- Require chef-infra version 15.3 or greater
+
 ## 0.5.0 - *2021-05-17*
 
 - Add ubuntu 20.04 support
