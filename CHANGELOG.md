@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## 1.0.0 - *2021-05-20*
 
 - Require chef-infra version 15.3 or greater
 
