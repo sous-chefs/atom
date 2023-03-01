@@ -6,7 +6,7 @@ source_url        'https://github.com/sous-chefs/atom'
 issues_url        'https://github.com/sous-chefs/atom/issues'
 description       'Installs/Configures the Atom text editor - a hackable editor based on Electron, maintained by GitHub'
 chef_version      '>= 15.3'
-version           '1.0.4'
+version           '1.0.5'
 
 supports 'mac_os_x'
 supports 'windows'
