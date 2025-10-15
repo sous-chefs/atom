@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/sous-chefs/atom/compare/1.0.11...v1.1.0) (2025-10-15)
+
+
+### Features
+
+* **ci:** migrate to reusable workflows v4.1.0 ([#93](https://github.com/sous-chefs/atom/issues/93)) ([e261e85](https://github.com/sous-chefs/atom/commit/e261e858b45bcfc5da6e148376cea6e345a1afe9))
+
 ## 1.0.5 - *2023-03-01*
 
 * Update workflows to 2.0.1
