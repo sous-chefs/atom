@@ -8,7 +8,7 @@ name: ci
 
 jobs:
   lint-unit:
-    uses: sous-chefs/.github/.github/workflows/lint-unit.yml@4.0.0
+    uses: sous-chefs/.github/.github/workflows/lint-unit.yml@5.0.3
     permissions:
       actions: write
       checks: write
@@ -18,7 +18,6 @@ jobs:
 
   integration:
     needs: "lint-unit"
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,9 +25,8 @@ jobs:
           - "ubuntu-1804"
           - "ubuntu-2004"
           - "ubuntu-2104"
-        suite:
-          - "default"
-      fail-fast: false
+        suite: ["default"]
+      fail-fast: true
 
     steps:
       - name: Check out code
@@ -43,3 +41,9 @@ jobs:
         with:
           suite: ${{ matrix.suite }}
           os: ${{ matrix.os }}
+
+  final:
+    runs-on: ubuntu-latest
+    needs: [integration]
+    steps:
+      - run: echo ${{needs.integration.outputs}}
